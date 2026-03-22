@@ -31,15 +31,25 @@ jobs:
       - name: Prepare CocoaPods
         run: gem install cocoapods
 
-      - name: Install dependencies
+
+      - name: Install dependencies (FIXED)
         run: |
+          export FLUTTER_ROOT=$(dirname $(dirname $(which flutter)))
+          echo "FLUTTER_ROOT=$FLUTTER_ROOT"
+
           flutter pub get
+
           cd ios
+          export FLUTTER_ROOT=$FLUTTER_ROOT
+          pod deintegrate
           pod install
 
-      - name: Build Unsigned IPA
+      - name: Build Unsigned IPA (FIXED)
         run: |
+          export FLUTTER_ROOT=$(dirname $(dirname $(which flutter)))
+
           flutter build ios --release --no-codesign
+
           cd build/ios/iphoneos
           mkdir -p Payload
           cp -r Runner.app Payload/
