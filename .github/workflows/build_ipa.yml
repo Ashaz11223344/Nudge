@@ -30,18 +30,19 @@ jobs:
       - name: Prepare CocoaPods
         run: gem install cocoapods
 
-
       - name: Install dependencies (FINAL FIX)
         run: |
           flutter clean
           flutter pub get
-
-          # 👇 MOST IMPORTANT (GENERATES iOS FILES)
           flutter precache --ios
+          
+          # Generate iOS files (required before pod install)
           flutter build ios --debug --no-codesign
-
+          
           cd ios
+          pod deintegrate
           pod install
+          cd ..
 
       - name: Build Unsigned IPA (FIXED)
         run: |

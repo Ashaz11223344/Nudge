@@ -37,13 +37,15 @@ jobs:
         run: |
           flutter clean
           flutter pub get
-
-          # 👇 MOST IMPORTANT (GENERATES iOS FILES)
           flutter precache --ios
+          
+          # Generate iOS files (required before pod install)
           flutter build ios --debug --no-codesign
-
+          
           cd ios
+          pod deintegrate
           pod install
+          cd ..
 
       - name: Build Unsigned IPA
         run: |
