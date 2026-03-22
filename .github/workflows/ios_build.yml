@@ -35,9 +35,6 @@ jobs:
 
       - name: Install dependencies (FINAL FIX)
         run: |
-          export FLUTTER_ROOT=$(dirname $(dirname $(which flutter)))
-          echo "FLUTTER_ROOT=$FLUTTER_ROOT"
-
           flutter clean
           flutter pub get
 
