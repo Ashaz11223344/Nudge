@@ -5,116 +5,53 @@ on:
 
 jobs:
   build:
-    name: Build & Artifact iOS (Manual)
     runs-on: macos-latest
-    
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up Flutter
-        uses: subosito/flutter-action@v2
+      - uses: subosito/flutter-action@v2
         with:
-          channel: 'stable'
+          channel: stable
 
-      - name: Set FLUTTER_ROOT
+      - name: Setup FLUTTER_ROOT
         run: echo "FLUTTER_ROOT=$(dirname $(dirname $(which flutter)))" >> $GITHUB_ENV
 
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.3'
-          bundler-cache: true
-          working-directory: ios
-
-      - name: Install CocoaPods 1.15.2
+      - name: Install CocoaPods (FORCED FIX)
         run: |
-          # Uninstall existing CocoaPods
-          gem uninstall cocoapods -a -x || true
           sudo gem uninstall cocoapods -a -x || true
-          brew uninstall cocoapods || true
+          sudo gem install cocoapods -v 1.15.2
 
-          # Install version 1.15.2
-          sudo gem install cocoapods -v 1.15.2 -n /usr/local/bin
+          export PATH="/usr/local/bin:/usr/bin:$PATH"
 
-          # Ensure PATH prioritizes system Ruby gems (e.g. /usr/local/bin)
-          echo "/usr/local/bin" >> $GITHUB_PATH
-          export PATH="/usr/local/bin:$PATH"
-
-          # Verify with which pod and pod --version
           which pod
           pod --version
 
-      - name: Install dependencies (FINAL FIX)
+      - name: Install dependencies
         run: |
-          # Ensure FLUTTER_ROOT is correctly set and available
           export FLUTTER_ROOT=$(dirname $(dirname $(which flutter)))
-          
-          # Ensure correct build order
+
           flutter clean
           flutter pub get
           flutter precache --ios
           flutter build ios --debug --no-codesign
-          
-          # Fix pod install step
+
           cd ios
+          export PATH="/usr/local/bin:/usr/bin:$PATH"
           pod deintegrate
           rm -rf Pods Podfile.lock
           pod install
           cd ..
 
-      - name: Build Unsigned IPA (FIXED)
+      - name: Build IPA
         run: |
-          # 1. Ensure Flutter iOS build step is included
           flutter build ios --release --no-codesign
 
-          # 6. Add debug logs
-          echo "DEBUG: Contents of build/ios/iphoneos"
-          ls -al build/ios/iphoneos
-
-          # 2. Verify Runner.app exists
-          if [ ! -d "build/ios/iphoneos/Runner.app" ]; then
-            echo "Error: build/ios/iphoneos/Runner.app does not exist!"
-            exit 1
-          fi
-          echo "Success: Runner.app exists. Proceeding..."
-
-          # 3. Create correct IPA structure
-          rm -rf Payload nudge.ipa
           mkdir Payload
           cp -r build/ios/iphoneos/Runner.app Payload/
-
-          # 6. Add debug logs - ls Payload
-          echo "DEBUG: Contents of Payload"
-          ls -al Payload
-
-          # 4. Package IPA properly
-          # Note: We zip the 'Payload' directory itself (not its contents) 
-          # to ensure it has a valid IPA structure for sideloading.
           zip -r nudge.ipa Payload
-          
-          echo "DEBUG: Ensure nudge.ipa was created"
-          ls -lah nudge.ipa
 
-      - name: Inject Team ID
-        run: |
-          sed -i '' "s/USER_TEAM_ID/${{ secrets.APPLE_TEAM_ID }}/g" ios/Runner.xcodeproj/project.pbxproj
-
-      - name: Build and Sign IPA (Development)
-        env:
-          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
-          APP_STORE_CONNECT_API_KEY_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
-          APP_STORE_CONNECT_API_KEY_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
-          APP_STORE_CONNECT_API_KEY_KEY: ${{ secrets.APP_STORE_CONNECT_KEY_CONTENT }}
-        run: |
-          cd ios
-          bundle exec fastlane build
-
-      - name: Upload IPAs
-        uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4
         with:
-          name: nudge-ios-artifacts-manual
-          if-no-files-found: error
-          path: |
-            nudge.ipa
-            build/ios/ipa/Nudge.ipa
+          name: ios-ipa
+          path: nudge.ipa
