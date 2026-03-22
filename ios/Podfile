@@ -19,7 +19,7 @@ def flutter_root
   # 2. Check Generated.xcconfig (standard for local development)
   generated_xcode_build_settings_path = File.expand_path(File.join('..', 'Flutter', 'Generated.xcconfig'), __FILE__)
   if File.exist?(generated_xcode_build_settings_path)
-    File.foreach(generated_xcode_build_settings_path) do |line|
+    File.readlines(generated_xcode_build_settings_path).each do |line|
       matches = line.match(/FLUTTER_ROOT=(.*)/)
       return matches[1].strip if matches
     end
@@ -32,11 +32,7 @@ def flutter_root
   raise "FLUTTER_ROOT not found. Ensure Flutter is installed and in your PATH."
 end
 
-flutter_root = File.expand_path('..', File.dirname(__FILE__))
-
-require File.expand_path(
-  File.join(flutter_root, '.flutter', 'packages', 'flutter_tools', 'bin', 'xcode_backend.rb')
-)
+require File.expand_path(File.join('packages', 'flutter_tools', 'bin', 'xcode_backend.rb'), flutter_root)
 
 target 'Runner' do
   use_frameworks!
