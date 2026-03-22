@@ -20,6 +20,9 @@ jobs:
         with:
           channel: 'stable'
 
+      - name: Ensure FLUTTER_ROOT is set
+        run: echo "FLUTTER_ROOT=$(dirname $(which flutter))/.." >> $GITHUB_ENV
+
       - name: Set up Ruby and Fastlane
         uses: ruby/setup-ruby@v1
         with:
