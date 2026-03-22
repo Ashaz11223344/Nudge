@@ -30,6 +30,15 @@ jobs:
           bundler-cache: true
           working-directory: ios
 
+      - name: Build Unsigned iOS
+        run: |
+          flutter build ios --release --no-codesign
+          cd build/ios/iphoneos
+          mkdir Payload
+          cp -r Runner.app Payload/
+          zip -r ../../Nudge-Unsigned.ipa Payload
+          cd ../../..
+
       - name: Inject Team ID
         run: |
           sed -i '' "s/USER_TEAM_ID/${{ secrets.APPLE_TEAM_ID }}/g" ios/Runner.xcodeproj/project.pbxproj
@@ -44,8 +53,14 @@ jobs:
           cd ios
           bundle exec fastlane build
 
-      - name: Upload IPA
+      - name: Upload Signed IPA
         uses: actions/upload-artifact@v4
         with:
-          name: nudge-ios-ipa
+          name: nudge-ios-signed-ipa
           path: build/ios/ipa/Nudge.ipa
+
+      - name: Upload Unsigned IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: nudge-ios-unsigned-ipa
+          path: build/Nudge-Unsigned.ipa
