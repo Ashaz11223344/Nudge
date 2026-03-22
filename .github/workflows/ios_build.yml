@@ -15,14 +15,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          channel: 'stable'
-
-      - name: Install dependencies
-        run: flutter pub get
-
       - name: Set up Ruby and Fastlane
         uses: ruby/setup-ruby@v1
         with:
@@ -32,6 +24,14 @@ jobs:
 
       - name: Install CocoaPods
         run: gem install cocoapods
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Install CocoaPods dependencies
+        run: |
+          cd ios
+          pod install
 
       - name: Build Unsigned iOS
         run: |
