@@ -32,7 +32,9 @@ def flutter_root
   raise "FLUTTER_ROOT not found. Ensure Flutter is installed and in your PATH."
 end
 
-require File.join(flutter_root, 'packages', 'flutter_tools', 'bin', 'xcode_backend.rb')
+require File.expand_path(File.join('packages', 'flutter_tools', 'bin', 'podhelper'), flutter_root)
+
+flutter_ios_podfile_setup
 
 target 'Runner' do
   use_frameworks!
