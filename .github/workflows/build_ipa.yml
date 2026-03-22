@@ -14,44 +14,33 @@ jobs:
         with:
           channel: stable
 
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.0'
+          bundler-cache: false
+
+      - name: Install CocoaPods
+        run: gem install cocoapods -v 1.15.2 --no-document
+
       - name: Setup FLUTTER_ROOT
         run: echo "FLUTTER_ROOT=$(dirname $(dirname $(which flutter)))" >> $GITHUB_ENV
 
-      - name: Install Pods (FORCE FIX)
+      - name: Install Flutter dependencies
         run: |
-          export FLUTTER_ROOT=$(dirname $(dirname $(which flutter)))
-
           flutter clean
           flutter pub get
           flutter precache --ios
-          flutter build ios --debug --no-codesign
 
-          cd ios
-
-          # remove old pods
-          rm -rf Pods Podfile.lock
-
-          # 👇 THIS IS THE MAGIC FIX
-          sudo gem install cocoapods -v 1.15.2
-
-          sudo ruby -S pod deintegrate || true
-          sudo ruby -S pod install
-
-
-      - name: Install dependencies
+      - name: Build and install pods
         run: |
-          export FLUTTER_ROOT=$(dirname $(dirname $(which flutter)))
-
-          flutter clean
-          flutter pub get
-          flutter precache --ios
+          # Generate the Xcode project (without codesigning)
           flutter build ios --debug --no-codesign
 
           cd ios
-          export PATH="/usr/local/bin:/usr/bin:$PATH"
-          pod deintegrate
+          # Clean any previous pods
           rm -rf Pods Podfile.lock
-          pod install
+          pod install --repo-update
           cd ..
 
       - name: Build IPA
