@@ -1,0 +1,76 @@
+name: Build iOS IPAs (Fresh)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    name: Build & Artifact iOS
+    runs-on: macos-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+
+      - name: Ensure FLUTTER_ROOT is set
+        run: echo "FLUTTER_ROOT=$(dirname $(which flutter))/.." >> $GITHUB_ENV
+
+      - name: Set up Ruby and Fastlane
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+          working-directory: ios
+
+      - name: Install CocoaPods
+        run: gem install cocoapods
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Install CocoaPods dependencies
+        run: |
+          cd ios
+          pod install
+
+      - name: Build Unsigned iOS
+        run: |
+          flutter build ios --release --no-codesign
+          cd build/ios/iphoneos
+          mkdir -p Payload
+          cp -r Runner.app Payload/
+          zip -r ../../Nudge-Unsigned.ipa Payload
+          cd ../../..
+
+      - name: Inject Team ID
+        run: |
+          sed -i '' "s/USER_TEAM_ID/${{ secrets.APPLE_TEAM_ID }}/g" ios/Runner.xcodeproj/project.pbxproj
+
+      - name: Build and Sign IPA (Development)
+        env:
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          APP_STORE_CONNECT_API_KEY_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+          APP_STORE_CONNECT_API_KEY_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+          APP_STORE_CONNECT_API_KEY_KEY: ${{ secrets.APP_STORE_CONNECT_KEY_CONTENT }}
+        run: |
+          cd ios
+          bundle exec fastlane build
+
+      - name: Upload Signed IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: nudge-ios-signed-ipa
+          path: build/ios/ipa/Nudge.ipa
+
+      - name: Upload Unsigned IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: nudge-ios-unsigned-ipa
+          path: build/Nudge-Unsigned.ipa
