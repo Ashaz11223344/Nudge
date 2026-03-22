@@ -21,7 +21,8 @@ jobs:
           channel: 'stable'
 
       - name: Set FLUTTER_ROOT
-        run: echo "FLUTTER_ROOT=$(flutter --version --machine | grep -o 'flutterRoot.*' | cut -d: -f2 | tr -d '\",}')" >> $GITHUB_ENV
+        run: |
+          echo "FLUTTER_ROOT=$(flutter --version --machine | grep -o 'flutterRoot.*' | cut -d: -f2 | tr -d '\",}')" >> $GITHUB_ENV
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
