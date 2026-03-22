@@ -2,12 +2,10 @@ name: Build iOS IPAs (Fresh)
 
 on:
   workflow_dispatch:
-  push:
-    branches: [ main ]
 
 jobs:
   build:
-    name: Build & Artifact iOS
+    name: Build & Artifact iOS (Manual)
     runs-on: macos-latest
     
     steps:
@@ -19,31 +17,26 @@ jobs:
         with:
           channel: 'stable'
 
-      - name: Ensure FLUTTER_ROOT is set
-        run: |
-          FLUTTER_BIN=$(which flutter)
-          FLUTTER_DIR=$(dirname $(dirname $FLUTTER_BIN))
-          echo "FLUTTER_ROOT=$FLUTTER_DIR" >> $GITHUB_ENV
+      - name: Set FLUTTER_ROOT
+        run: echo "FLUTTER_ROOT=$FLUTTER_HOME" >> $GITHUB_ENV
 
-      - name: Set up Ruby and Fastlane
+      - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'
           bundler-cache: true
           working-directory: ios
 
-      - name: Install CocoaPods
+      - name: Prepare CocoaPods
         run: gem install cocoapods
 
       - name: Install dependencies
-        run: flutter pub get
-
-      - name: Install CocoaPods dependencies
         run: |
+          flutter pub get
           cd ios
           pod install
 
-      - name: Build Unsigned iOS
+      - name: Build Unsigned IPA
         run: |
           flutter build ios --release --no-codesign
           cd build/ios/iphoneos
@@ -66,14 +59,10 @@ jobs:
           cd ios
           bundle exec fastlane build
 
-      - name: Upload Signed IPA
+      - name: Upload IPAs
         uses: actions/upload-artifact@v4
         with:
-          name: nudge-ios-signed-ipa
-          path: build/ios/ipa/Nudge.ipa
-
-      - name: Upload Unsigned IPA
-        uses: actions/upload-artifact@v4
-        with:
-          name: nudge-ios-unsigned-ipa
-          path: build/Nudge-Unsigned.ipa
+          name: nudge-ios-artifacts-manual
+          path: |
+            build/Nudge-Unsigned.ipa
+            build/ios/ipa/Nudge.ipa
