@@ -20,15 +20,26 @@ jobs:
       - name: Setup FLUTTER_ROOT
         run: echo "FLUTTER_ROOT=$(dirname $(dirname $(which flutter)))" >> $GITHUB_ENV
 
-      - name: Install CocoaPods (FORCED FIX)
+      - name: Install Pods (FORCE FIX)
         run: |
-          sudo gem uninstall cocoapods -a -x || true
+          export FLUTTER_ROOT=$(dirname $(dirname $(which flutter)))
+
+          flutter clean
+          flutter pub get
+          flutter precache --ios
+          flutter build ios --debug --no-codesign
+
+          cd ios
+
+          # remove old pods
+          rm -rf Pods Podfile.lock
+
+          # 👇 THIS IS THE MAGIC FIX
           sudo gem install cocoapods -v 1.15.2
 
-          export PATH="/usr/local/bin:/usr/bin:$PATH"
+          sudo ruby -S pod deintegrate || true
+          sudo ruby -S pod install
 
-          which pod
-          pod --version
 
       - name: Install dependencies
         run: |
