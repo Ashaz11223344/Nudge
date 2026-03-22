@@ -1,0 +1,230 @@
+[motivation] Believe you can and you're halfway there.
+[motivation] The best way to predict the future is to create it.
+[motivation] The only way to do great work is to love what you do.
+[motivation] Success is not final, failure is not fatal: it is the courage to continue that counts.
+[motivation] The future belongs to those who believe in the beauty of their dreams.
+[motivation] The only limit to our realization of tomorrow will be our doubts of today.
+[motivation] It does not matter how slowly you go as long as you do not stop.
+[motivation] Everything you've ever wanted is on the other side of fear.
+[motivation] The journey of a thousand miles begins with a single step.
+[motivation] Your time is limited, don't waste it living someone else's life.
+[life] Know thyself.
+[life] The unexamined life is not worth living.
+[life] To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.
+[life] Life is what happens to you while you're busy making other plans.
+[life] In three words I can sum up everything I've learned about life: it goes on.
+[life] The only true wisdom is in knowing you know nothing.
+[life] What we think, we become.
+[life] Happiness depends upon ourselves.
+[life] He who has a why to live can bear almost any how.
+[life] The mind is everything. What you think you become.
+[motivation] Opportunities don't happen. You create them.
+[motivation] Don't be afraid to give up the good to go for the great.
+[motivation] I find that the harder I work, the more luck I seem to have.
+[motivation] Success is walking from failure to failure with no loss of enthusiasm.
+[motivation] The way to get started is to quit talking and begin doing.
+[motivation] Don't let yesterday take up too much of today.
+[motivation] It's not whether you get knocked down, it's whether you get up.
+[motivation] The only place where success comes before work is in the dictionary.
+[motivation] Success usually comes to those who are too busy to be looking for it.
+[motivation] There are no shortcuts to any place worth going.
+[focus] Courage is resistance to fear, mastery of fear, not absence of fear.
+[focus] You gain strength, courage, and confidence by every experience in which you really stop to look fear in the face.
+[focus] We must embrace pain and burn it as fuel for our journey.
+[focus] Strength does not come from physical capacity. It comes from an indomitable will.
+[focus] What lies behind us and what lies before us are tiny matters compared to what lies within us.
+[focus] Be bold and courageous. When you look back on your life, you'll regret the things you didn't do more than the ones you did.
+[life] Life is either a daring adventure or nothing at all.
+[focus] You must do the things you think you cannot do.
+[focus] Courage doesn't always roar. Sometimes courage is the quiet voice at the end of the day saying, 'I will try again tomorrow.'
+[focus] The brave man is not he who does not feel afraid, but he who conquers that fear.
+[love] The greatest happiness of life is the conviction that we are loved; loved for ourselves, or rather, loved in spite of ourselves.
+[love] Love is composed of a single soul inhabiting two bodies.
+[love] We loved with a love that was more than love.
+[love] To love and be loved is to feel the sun from both sides.
+[love] Love is that condition in which the happiness of another person is essential to your own.
+[love] The best thing to hold onto in life is each other.
+[love] Love is friendship that has caught fire.
+[love] Being deeply loved by someone gives you strength, while loving someone deeply gives you courage.
+[love] Love is when the other person's happiness is more important than your own.
+[love] A successful marriage requires falling in love many times, always with the same person.
+[focus] Creativity is intelligence having fun.
+[focus] Innovation distinguishes between a leader and a follower.
+[focus] The creative process is not controlled by a switch you can simply turn on or off; it's with you all the time.
+[focus] Every artist was first an amateur.
+[focus] Creativity takes courage.
+[focus] Imagination is more important than knowledge.
+[focus] To live a creative life, we must lose our fear of being wrong.
+[focus] The worst enemy to creativity is self-doubt.
+[focus] Don't think. Thinking is the enemy of creativity.
+[focus] Creativity is contagious, pass it on.
+[motivation] Perseverance is not a long race; it is many short races one after the other.
+[motivation] Fall seven times, stand up eight.
+[motivation] Our greatest glory is not in never falling, but in rising every time we fall.
+[motivation] Energy and persistence conquer all things.
+[motivation] It always seems impossible until it's done.
+[motivation] The difference between the impossible and the possible lies in a person's determination.
+[motivation] When you come to the end of your rope, tie a knot and hang on.
+[motivation] Perseverance is failing 19 times and succeeding the 20th.
+[motivation] Victory belongs to the most persevering.
+[motivation] A river cuts through rock, not because of its power, but because of its persistence.
+[life] Happiness is not something ready made. It comes from your own actions.
+[life] The purpose of our lives is to be happy.
+[life] Happiness is when what you think, what you say, and what you do are in harmony.
+[life] Be happy for this moment. This moment is your life.
+[life] The secret of happiness is freedom, the secret of freedom is courage.
+[life] Happiness is a butterfly, which when pursued, is always just beyond your grasp, but which, if you will sit down quietly, may alight upon you.
+[life] Count your age by friends, not years. Count your life by smiles, not tears.
+[life] The happiest people don't have the best of everything, they make the best of everything.
+[life] Happiness is not a station you arrive at, but a manner of traveling.
+[life] For every minute you are angry you lose sixty seconds of happiness.
+[focus] Live as if you were to die tomorrow. Learn as if you were to live forever.
+[focus] The capacity to learn is a gift; the ability to learn is a skill; the willingness to learn is a choice.
+[focus] Education is the most powerful weapon which you can use to change the world.
+[focus] The beautiful thing about learning is that no one can take it away from you.
+[focus] An investment in knowledge pays the best interest.
+[focus] Change is the end result of all true learning.
+[focus] Learning never exhausts the mind.
+[focus] The more that you read, the more things you will know. The more that you learn, the more places you'll go.
+[focus] Education is not the filling of a pail, but the lighting of a fire.
+[focus] Anyone who stops learning is old, whether at twenty or eighty. Anyone who keeps learning stays young.
+[life] Time you enjoy wasting is not wasted time.
+[life] The two most powerful warriors are patience and time.
+[life] Lost time is never found again.
+[life] Time is what we want most, but what we use worst.
+[life] The key is in not spending time, but in investing it.
+[life] Don't count the days, make the days count.
+[life] Time is the most valuable thing a man can spend.
+[life] The present time has one advantage over every other - it is our own.
+[life] Your time is limited, so don't waste it living someone else's life.
+[life] The future depends on what you do today.
+[motivation] Start where you are. Use what you have. Do what you can.
+[motivation] The only way to achieve the impossible is to believe it is possible.
+[motivation] You are never too old to set another goal or to dream a new dream.
+[motivation] What you get by achieving your goals is not as important as what you become by achieving your goals.
+[motivation] Limitations live only in our minds. But if we use our imaginations, our possibilities become limitless.
+[motivation] The secret of getting ahead is getting started.
+[motivation] Don't watch the clock; do what it does. Keep going.
+[motivation] A year from now you may wish you had started today.
+[motivation] The only person you are destined to become is the person you decide to be.
+[motivation] Dream big and dare to fail.
+[focus] Leadership is not about being in charge. It is about taking care of those in your charge.
+[focus] A leader is one who knows the way, goes the way, and shows the way.
+[focus] The greatest leader is not necessarily the one who does the greatest things. He is the one that gets the people to do the greatest things.
+[focus] If your actions inspire others to dream more, learn more, do more and become more, you are a leader.
+[focus] The art of leadership is saying no, not yes. It is very easy to say yes.
+[focus] Before you are a leader, success is all about growing yourself. When you become a leader, success is all about growing others.
+[focus] Leadership is the capacity to translate vision into reality.
+[focus] A good leader takes a little more than his share of the blame, a little less than his share of the credit.
+[focus] The function of leadership is to produce more leaders, not more followers.
+[focus] Leadership is not about titles, positions or flowcharts. It is about one life influencing another.
+[healing] In every walk with nature one receives far more than he seeks.
+[healing] The clearest way into the Universe is through a forest wilderness.
+[healing] Look deep into nature, and then you will understand everything better.
+[healing] Nature does not hurry, yet everything is accomplished.
+[healing] Adopt the pace of nature: her secret is patience.
+[healing] The poetry of the earth is never dead.
+[healing] To sit in the shade on a fine day and look upon verdure is the most perfect refreshment.
+[healing] Study nature, love nature, stay close to nature. It will never fail you.
+[healing] Nature is not a place to visit. It is home.
+[healing] The earth has music for those who listen.
+[healing] Health is the greatest gift, contentment the greatest wealth, faithfulness the best relationship.
+[healing] The groundwork of all happiness is health.
+[healing] To keep the body in good health is a duty... otherwise we shall not be able to keep our mind strong and clear.
+[healing] Health is a state of complete harmony of the body, mind and spirit.
+[healing] The first wealth is health.
+[healing] A healthy outside starts from the inside.
+[healing] Take care of your body. It's the only place you have to live.
+[healing] Health is not valued until sickness comes.
+[healing] He who has health has hope; and he who has hope has everything.
+[healing] Physical fitness is not only one of the most important keys to a healthy body, it is the basis of dynamic and creative intellectual activity.
+[love] A friend is one that knows you as you are, understands where you have been, accepts what you have become, and still, gently allows you to grow.
+[love] Friendship is born at that moment when one person says to another, 'What! You too? I thought I was the only one.'
+[love] True friendship comes when the silence between two people is comfortable.
+[love] A real friend is one who walks in when the rest of the world walks out.
+[love] Friendship is the only cement that will ever hold the world together.
+[love] A single rose can be my garden... a single friend, my world.
+[love] There is nothing on this earth more to be prized than true friendship.
+[love] Friends show their love in times of trouble, not in happiness.
+[love] The language of friendship is not words but meanings.
+[love] Friendship is the golden thread that ties the heart of all the world.
+[life] The only constant in life is change.
+[life] Change your thoughts and you change your world.
+[life] Progress is impossible without change, and those who cannot change their minds cannot change anything.
+[life] If you don't like something, change it. If you can't change it, change your attitude.
+[life] Life is a series of natural and spontaneous changes. Don't resist them; that only creates sorrow. Let reality be reality.
+[life] To improve is to change; to be perfect is to change often.
+[life] Change before you have to.
+[life] All great changes are preceded by chaos.
+[life] Be the change that you wish to see in the world.
+[life] When we are no longer able to change a situation, we are challenged to change ourselves.
+[healing] Gratitude turns what we have into enough, and more.
+[healing] The more grateful I am, the more beauty I see.
+[healing] Gratitude is the healthiest of all human emotions.
+[healing] Gratitude makes sense of our past, brings peace for today, and creates a vision for tomorrow.
+[healing] Joy is the simplest form of gratitude.
+[healing] Gratitude is not only the greatest of virtues, but the parent of all others.
+[healing] When you are grateful, fear disappears and abundance appears.
+[healing] Gratitude is the wine for the soul. Go on. Get drunk.
+[healing] Gratitude unlocks the fullness of life.
+[healing] Appreciation is a wonderful thing: It makes what is excellent in others belong to us as well.
+[life] Simplicity is the ultimate sophistication.
+[life] The ability to simplify means to eliminate the unnecessary so that the necessary may speak.
+[life] Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.
+[life] Simplicity is about subtracting the obvious and adding the meaningful.
+[life] Live simply so that others may simply live.
+[life] Simplicity is the glory of expression.
+[life] Be content with what you have; rejoice in the way things are. When you realize there is nothing lacking, the whole world belongs to you.
+[life] The simplest things are often the truest.
+[life] Less is more.
+[life] Simplicity is the keynote of all true elegance.
+[motivation] Well begun is half done.
+[motivation] Action is the foundational key to all success.
+[motivation] The path to success is to take massive, determined action.
+[motivation] An ounce of action is worth a ton of theory.
+[motivation] Action may not always bring happiness, but there is no happiness without action.
+[motivation] Take action! An inch of movement will bring you closer to your goals than a mile of intention.
+[motivation] Do not wait; the time will never be 'just right.' Start where you stand, and work with whatever tools you may have.
+[motivation] Inaction breeds doubt and fear. Action breeds confidence and courage.
+[motivation] The world makes way for the man who knows where he is going.
+[motivation] Act as if what you do makes a difference. It does.
+[motivation] All our dreams can come true, if we have the courage to pursue them.
+[motivation] The biggest adventure you can take is to live the life of your dreams.
+[motivation] Dream no small dreams for they have no power to move the hearts of men.
+[motivation] Hold fast to dreams, for if dreams die, life is a broken-winged bird that cannot fly.
+[motivation] You see things; and you say, 'Why?' But I dream things that never were; and I say, 'Why not?'
+[motivation] Dreams are illustrations from the book your soul is writing about you.
+[motivation] Follow your dreams, they know the way.
+[motivation] A dream doesn't become reality through magic; it takes sweat, determination and hard work.
+[motivation] The future belongs to those who believe in the beauty of their dreams.
+[motivation] Don't be pushed around by the fears in your mind. Be led by the dreams in your heart.
+[healing] The human capacity for burden is like bamboo - far more flexible than you'd ever believe at first glance.
+[healing] Rock bottom became the solid foundation on which I rebuilt my life.
+[healing] Resilience is knowing that you are the only one that has the power and the responsibility to pick yourself up.
+[healing] It's your reaction to adversity, not adversity itself that determines how your life's story will develop.
+[healing] The oak fought the wind and was broken, the willow bent when it must and survived.
+[healing] You may have to fight a battle more than once to win it.
+[healing] Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.
+[healing] Resilience is accepting your new reality, even if it's less good than the one you had before.
+[healing] The strongest people are not those who show strength in front of us but those who win battles we know nothing about.
+[healing] Resilience is very different than being numb. Resilience means you experience, you feel, you fail, you hurt. You fall. But, you keep going.
+[life] Humility is not thinking less of yourself, it's thinking of yourself less.
+[life] True humility is not thinking less of yourself; it is thinking of yourself less.
+[life] Pride makes us artificial and humility makes us real.
+[life] The proud man can learn humility, but he will be proud of it.
+[life] Humility is the solid foundation of all virtues.
+[life] Stay humble. Work hard. Be kind.
+[life] Humility is the ability to give up your pride and still retain your dignity.
+[life] Knowledge is proud that it knows so much; wisdom is humble that it knows no more.
+[life] The higher we are placed, the more humbly we should walk.
+[life] Humility is nothing but truth, and pride is nothing but lying.
+[life] The purpose of life is not to be happy. It is to be useful, to be honorable, to be compassionate, to have it make some difference that you have lived and lived well.
+[life] Life is never made unbearable by circumstances, but only by lack of meaning and purpose.
+[life] The meaning of life is to find your gift. The purpose of life is to give it away.
+[life] My mission in life is not merely to survive, but to thrive; and to do so with some passion, some compassion, some humor, and some style.
+[life] If you can't figure out your purpose, figure out your passion. For your passion will lead you right into your purpose.
+[life] The two most important days in your life are the day you are born and the day you find out why.
+[life] He who has a why to live can bear almost any how.
+[life] Your purpose in life is to find your purpose and give your whole heart and soul to it.
+[life] The purpose of human life is to serve, and to show compassion and the will to help others.
+[life] A person who has a why can bear any how.

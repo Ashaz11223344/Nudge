@@ -1,0 +1,41 @@
+class AppStrings {
+  AppStrings._();
+
+  static const String appName = 'Nudge';
+  static const String welcomeMessage = 'Welcome to Nudge';
+  static const String onboardingTitle = 'Let\'s get started';
+  static const String onboardingSubtitle = 'Tell us your name and add a profile photo';
+  static const String enterName = 'Enter your name';
+  static const String continueText = 'Continue';
+  static const String homeGreeting = 'Hello';
+  static const String refreshQuote = 'Refresh';
+  static const String favorites = 'Favorites';
+  static const String history = 'History';
+  static const String journal = 'Journal';
+  static const String moodTracker = 'Mood Tracker';
+  static const String settings = 'Settings';
+  static const String profile = 'Profile';
+  static const String search = 'Search';
+  static const String darkMode = 'Dark Mode';
+  static const String notifications = 'Notifications';
+  static const String quietHours = 'Quiet Hours';
+  static const String fontSize = 'Font Size';
+  static const String backupRestore = 'Backup & Restore';
+  static const String clearData = 'Clear Data';
+  static const String noFavorites = 'No favorites yet';
+  static const String noHistory = 'No history yet';
+  static const String noJournalEntries = 'No journal entries yet';
+  static const String streak = 'Day Streak';
+  static const String quoteCopied = 'Quote copied to clipboard';
+  static const String addedToFavorites = 'Added to favorites';
+  static const String removedFromFavorites = 'Removed from favorites';
+  static const String testNotification = 'Test Notification';
+  static const String exportData = 'Export Data';
+  static const String importData = 'Import Data';
+  static const String dataExported = 'Data exported successfully';
+  static const String dataImported = 'Data imported successfully';
+  static const String allDataCleared = 'All data cleared';
+  static const String searchQuotes = 'Search quotes...';
+  static const String howAreYouFeeling = 'How are you feeling today?';
+  static const String writeThoughts = 'Write your thoughts...';
+}
