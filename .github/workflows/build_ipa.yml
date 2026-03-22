@@ -27,23 +27,39 @@ jobs:
           bundler-cache: true
           working-directory: ios
 
-      - name: Install CocoaPods (Stable)
+      - name: Install CocoaPods 1.15.2
         run: |
+          # Uninstall existing CocoaPods
+          gem uninstall cocoapods -a -x || true
           sudo gem uninstall cocoapods -a -x || true
-          sudo gem install cocoapods -v 1.15.2
+          brew uninstall cocoapods || true
+
+          # Install version 1.15.2
+          sudo gem install cocoapods -v 1.15.2 -n /usr/local/bin
+
+          # Ensure PATH prioritizes system Ruby gems (e.g. /usr/local/bin)
+          echo "/usr/local/bin" >> $GITHUB_PATH
+          export PATH="/usr/local/bin:$PATH"
+
+          # Verify with which pod and pod --version
+          which pod
           pod --version
 
       - name: Install dependencies (FINAL FIX)
         run: |
+          # Ensure FLUTTER_ROOT is correctly set and available
+          export FLUTTER_ROOT=$(dirname $(dirname $(which flutter)))
+          
+          # Ensure correct build order
           flutter clean
           flutter pub get
           flutter precache --ios
-          
-          # Generate iOS files (required before pod install)
           flutter build ios --debug --no-codesign
           
+          # Fix pod install step
           cd ios
           pod deintegrate
+          rm -rf Pods Podfile.lock
           pod install
           cd ..
 
