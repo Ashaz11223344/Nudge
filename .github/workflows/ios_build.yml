@@ -11,50 +11,46 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - uses: subosito/flutter-action@v2
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
         with:
           channel: stable
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.0'
-          bundler-cache: false
+      - name: Setup CocoaPods 1.15.2 (System Ruby)
+        run: |
+          brew uninstall cocoapods || true
+          gem uninstall cocoapods -a || true
+          sudo gem install cocoapods -v 1.15.2 -n /usr/local/bin
+          pod --version
 
-      - name: Install CocoaPods
-        run: gem install cocoapods -v 1.15.2 --no-document
-
-      - name: Setup FLUTTER_ROOT
-        run: echo "FLUTTER_ROOT=$(dirname $(dirname $(which flutter)))" >> $GITHUB_ENV
-
-      - name: Install Flutter dependencies
+      - name: Prepare Flutter iOS Build
         run: |
           flutter clean
           flutter pub get
           flutter precache --ios
-
-      - name: Build and install pods
-        run: |
-          # Generate the Xcode project (without codesigning)
           flutter build ios --debug --no-codesign
 
-          cd ios
-          # Clean any previous pods
-          rm -rf Pods Podfile.lock
-          pod install --repo-update
-          cd ..
-
-      - name: Build IPA
+      - name: Clean and Install CocoaPods
         run: |
-          flutter build ios --release --no-codesign
+          cd ios
+          pod deintegrate
+          rm -rf Pods Podfile.lock
+          pod install
 
+      - name: Final iOS Release Build
+        run: flutter build ios --release --no-codesign
+
+      - name: Package IPA
+        run: |
           mkdir Payload
           cp -r build/ios/iphoneos/Runner.app Payload/
           zip -r Nudge.ipa Payload
 
-      - uses: actions/upload-artifact@v4
+      - name: Upload IPA Artifact
+        uses: actions/upload-artifact@v4
         with:
-          name: ios-build
+          name: Nudge.ipa
           path: Nudge.ipa
