@@ -1,0 +1,3 @@
+app_identifier("com.nudgeapp.nudge")
+# apple_id will be handled via API Key in CI
+# team_id ("TEAM_ID_PLACEHOLDER") will be handled via API Key/Secrets
